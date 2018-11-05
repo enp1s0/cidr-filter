@@ -31,7 +31,7 @@ inline bool is_subnet(const std::string base_cidr, const std::string ipv4_addres
 	// cidr_bits : bits(ipv4_address)
 	auto ipv4_address_bits = get_ipv4_address_bits(ipv4_address);
 	// subnetmask
-	const unsigned int subnet_mask = 0xffffffff << (32 - cidr);
+	const unsigned int subnet_mask = (~0) << (32 - cidr);
 
 	return (cidr_bits & subnet_mask) == (ipv4_address_bits & subnet_mask);
 }
