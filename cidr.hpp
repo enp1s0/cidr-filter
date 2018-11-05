@@ -20,7 +20,7 @@ inline unsigned int get_ipv4_address_bits(const std::string ipv4_address){
 	ipv4_address_bits = (ipv4_address_bits << 8) | block;
 	return ipv4_address_bits;
 }
-inline bool is_included(const std::string base_cidr, const std::string ipv4_address){
+inline bool is_subnet(const std::string base_cidr, const std::string ipv4_address){
 	// base_cidr : xxx.yyy.zzz.www/cc
 	// slash_pos : position of slash
 	const auto slash_pos = base_cidr.find_first_of("/");
